@@ -14,6 +14,10 @@ To change the menu, edit `menu.json`:
 {
   "name": "Mac & Cheese House",
   "currency": "EUR",
+  "location": {
+    "address": "Passage 56, 3431 LR Nieuwegein",
+    "maps": "https://maps.app.goo.gl/2kTJcpQowUy6GhL77"
+  },
   "updated": "2026-10-13",
   "footer": "Raadpleeg het personeel voor informatie over allergenen.",
   "categories": [
@@ -27,7 +31,7 @@ To change the menu, edit `menu.json`:
 }
 ```
 
-A `price` of `null` is shown as "Prijs onbekend".
+A `price` of `null` is shown as "Prijs onbekend". `location` is optional; without `maps`, the link falls back to a Google Maps search for the address.
 
 ## Running locally
 

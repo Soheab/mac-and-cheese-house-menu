@@ -1,6 +1,10 @@
 {
   "name": "Mac & Cheese House",
   "currency": "EUR",
+  "location": {
+    "address": "Passage 56, 3431 LR Nieuwegein",
+    "maps": "https://maps.app.goo.gl/2kTJcpQowUy6GhL77"
+  },
   "updated": "2026-10-13",
   "footer": "Raadpleeg het personeel voor informatie over allergenen.",
   "categories": [

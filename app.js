@@ -26,6 +26,13 @@ function renderMenu(data) {
 
   renderTitle(data.name);
   $("#footer-note").textContent = data.footer ?? "";
+  if (data.location?.address) {
+    const link = $("#location-link");
+    link.textContent = `📍 ${data.location.address}`;
+    link.href = data.location.maps
+      ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${data.name}, ${data.location.address}`)}`;
+    $("#location").hidden = false;
+  }
   if (data.updated) {
     const date = new Date(data.updated).toLocaleDateString("nl-NL");
     $("#updated").textContent = ` (${date})`;
