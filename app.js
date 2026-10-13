@@ -258,6 +258,15 @@ function setupActiveNav() {
     }
     if (atBottom) active = visible.at(-1);
     if (active === current) return;
+    // Mirror the active category in the URL (without adding history entries)
+    // so a reload or a shared link opens on the same category. The first
+    // update only records the starting point, so a fresh visit keeps a clean URL.
+    // The first category drops the hash instead, so reloading at the top
+    // stays at the top rather than scrolling the header out of view.
+    if (current) {
+      const url = active === sections[0] ? location.pathname + location.search : `#${active.id}`;
+      history.replaceState(null, "", url);
+    }
     current = active;
     for (const a of links) {
       const on = a.hash === `#${active.id}`;
@@ -278,6 +287,18 @@ function setupActiveNav() {
   update();
 }
 
+// The menu is rendered after a fetch, so the browser's own jump to "#id" (and
+// its scroll restoration) happens before the sections exist. Redo it here.
+function restoreCategory() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const section = id ? document.getElementById(id) : null;
+  if (section?.matches("#menu section")) section.scrollIntoView({ block: "start" });
+}
+
+// We restore the category ourselves (see restoreCategory), so stop the browser
+// from restoring a stale scroll position on top of that.
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
 async function main() {
   try {
     const res = await fetch("menu.json", { cache: "no-cache" });
@@ -285,6 +306,7 @@ async function main() {
     renderMenu(await res.json());
     setupSearch();
     setupActiveNav();
+    restoreCategory();
     setupCart();
   } catch (err) {
     console.error(err);
