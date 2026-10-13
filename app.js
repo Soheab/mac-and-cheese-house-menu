@@ -35,10 +35,32 @@ function el(tag, { dataset, ...props } = {}, children = []) {
 
 function thumbNode(item) {
   if (!item.image) return [];
-  return [el("img", {
-    className: "thumb", src: item.image, alt: "", loading: "lazy", decoding: "async",
+  return [el("button", {
+    type: "button", className: "thumb", ariaLabel: `Foto van ${item.name} bekijken`,
+    onclick: () => openLightbox(item),
+  }, [el("img", {
+    src: item.thumb ?? item.image, alt: "", loading: "lazy", decoding: "async",
     width: 40, height: 40,
-  })];
+  })])];
+}
+
+function openLightbox(item) {
+  const box = $("#lightbox");
+  const img = $("#lightbox-img");
+  img.src = item.image;
+  img.alt = item.name;
+  $("#lightbox-caption").replaceChildren(
+    el("span", { textContent: item.name }),
+    ...(typeof item.price === "number" ? [el("span", { className: "price" }, priceNodes(item.price))] : []),
+  );
+  box.showModal();
+}
+
+function setupLightbox() {
+  const box = $("#lightbox");
+  // Any tap closes it; Escape already does through <dialog>.
+  box.addEventListener("click", () => box.close());
+  box.addEventListener("close", () => $("#lightbox-img").removeAttribute("src"));
 }
 
 function renderTitle(name) {
@@ -308,6 +330,7 @@ async function main() {
     setupActiveNav();
     restoreCategory();
     setupCart();
+    setupLightbox();
   } catch (err) {
     console.error(err);
     $("#menu").replaceChildren(el("p", { className: "status", textContent: "Menu kon niet geladen worden." }));

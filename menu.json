@@ -14,7 +14,9 @@
       "items": [
         {
           "name": "Lunchdeal",
-          "price": 7.95
+          "price": 7.95,
+          "image": "images/full/lunchdeal.webp",
+          "thumb": "images/thumb/lunchdeal.webp"
         }
       ]
     },
@@ -24,31 +26,45 @@
       "items": [
         {
           "name": "Mac Classic",
-          "price": 8.95
+          "price": 8.95,
+          "image": "images/full/mac-classic.webp",
+          "thumb": "images/thumb/mac-classic.webp"
         },
         {
           "name": "Pesto Riot",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/pesto-riot.webp",
+          "thumb": "images/thumb/pesto-riot.webp"
         },
         {
           "name": "Cheesezilla",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/cheesezilla.webp",
+          "thumb": "images/thumb/cheesezilla.webp"
         },
         {
           "name": "Crispy Chicken Bomb",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/crispy-chicken-bomb.webp",
+          "thumb": "images/thumb/crispy-chicken-bomb.webp"
         },
         {
           "name": "Tender Melt",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/tender-melt.webp",
+          "thumb": "images/thumb/tender-melt.webp"
         },
         {
           "name": "Smoky Grill Chicken",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/smoky-grill-chicken.webp",
+          "thumb": "images/thumb/smoky-grill-chicken.webp"
         },
         {
           "name": "Nacho Volcano",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/nacho-volcano.webp",
+          "thumb": "images/thumb/nacho-volcano.webp"
         }
       ]
     },
@@ -58,27 +74,39 @@
       "items": [
         {
           "name": "Loaded Cheesezilla",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/loaded-cheesezilla.webp",
+          "thumb": "images/thumb/loaded-cheesezilla.webp"
         },
         {
           "name": "Loaded Crispy Chicken Bomb",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/loaded-crispy-chicken-bomb.webp",
+          "thumb": "images/thumb/loaded-crispy-chicken-bomb.webp"
         },
         {
           "name": "Loaded Tender Melt",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/loaded-tender-melt.webp",
+          "thumb": "images/thumb/loaded-tender-melt.webp"
         },
         {
           "name": "Loaded Smoky Grill",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/loaded-smoky-grill.webp",
+          "thumb": "images/thumb/loaded-smoky-grill.webp"
         },
         {
           "name": "Loaded Nacho Volcano",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/loaded-nacho-volcano.webp",
+          "thumb": "images/thumb/loaded-nacho-volcano.webp"
         },
         {
           "name": "Nashville",
-          "price": 12.95
+          "price": 12.95,
+          "image": "images/full/nashville.webp",
+          "thumb": "images/thumb/nashville.webp"
         }
       ]
     },
@@ -88,23 +116,33 @@
       "items": [
         {
           "name": "Taco Cheesezilla",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/taco-cheesezilla.webp",
+          "thumb": "images/thumb/taco-cheesezilla.webp"
         },
         {
           "name": "Taco Crispy Chicken Bomb",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/taco-crispy-chicken-bomb.webp",
+          "thumb": "images/thumb/taco-crispy-chicken-bomb.webp"
         },
         {
           "name": "Taco Tender Melt",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/taco-tender-melt.webp",
+          "thumb": "images/thumb/taco-tender-melt.webp"
         },
         {
           "name": "Taco Smoky Grill",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/taco-smoky-grill.webp",
+          "thumb": "images/thumb/taco-smoky-grill.webp"
         },
         {
           "name": "Taco Nacho Volcano",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/taco-nacho-volcano.webp",
+          "thumb": "images/thumb/taco-nacho-volcano.webp"
         }
       ]
     },
@@ -114,15 +152,21 @@
       "items": [
         {
           "name": "Double Smash",
-          "price": 10.95
+          "price": 10.95,
+          "image": "images/full/double-smash.webp",
+          "thumb": "images/thumb/double-smash.webp"
         },
         {
           "name": "Triple Smash",
-          "price": 12.95
+          "price": 12.95,
+          "image": "images/full/triple-smash.webp",
+          "thumb": "images/thumb/triple-smash.webp"
         },
         {
           "name": "Monster Smash",
-          "price": 14.95
+          "price": 14.95,
+          "image": "images/full/monster-smash.webp",
+          "thumb": "images/thumb/monster-smash.webp"
         }
       ]
     },
@@ -132,15 +176,21 @@
       "items": [
         {
           "name": "Patat",
-          "price": 3.95
+          "price": 3.95,
+          "image": "images/full/patat.webp",
+          "thumb": "images/thumb/patat.webp"
         },
         {
           "name": "Mac & Cheese Balls (6 st)",
-          "price": 5.95
+          "price": 5.95,
+          "image": "images/full/mac-cheese-balls-6-st.webp",
+          "thumb": "images/thumb/mac-cheese-balls-6-st.webp"
         },
         {
           "name": "Chili Cheese Nuggets (6 st)",
-          "price": 5.95
+          "price": 5.95,
+          "image": "images/full/chili-cheese-nuggets-6-st.webp",
+          "thumb": "images/thumb/chili-cheese-nuggets-6-st.webp"
         }
       ]
     },
@@ -150,19 +200,27 @@
       "items": [
         {
           "name": "Classic",
-          "price": 7.95
+          "price": 7.95,
+          "image": "images/full/knafeh-classic.webp",
+          "thumb": "images/thumb/knafeh-classic.webp"
         },
         {
           "name": "Chocolate",
-          "price": 8.95
+          "price": 8.95,
+          "image": "images/full/knafeh-chocolate.webp",
+          "thumb": "images/thumb/knafeh-chocolate.webp"
         },
         {
           "name": "White Chocolate",
-          "price": null
+          "price": null,
+          "image": "images/full/knafeh-white-chocolate.webp",
+          "thumb": "images/thumb/knafeh-white-chocolate.webp"
         },
         {
           "name": "Dubai",
-          "price": 9.95
+          "price": 9.95,
+          "image": "images/full/knafeh-dubai.webp",
+          "thumb": "images/thumb/knafeh-dubai.webp"
         }
       ]
     },
@@ -172,7 +230,9 @@
       "items": [
         {
           "name": "Kids Mac",
-          "price": 4.95
+          "price": 4.95,
+          "image": "images/full/kids-mac.webp",
+          "thumb": "images/thumb/kids-mac.webp"
         },
         {
           "name": "Kids Nuggets",
@@ -186,7 +246,9 @@
       "items": [
         {
           "name": "Drankje",
-          "price": 2.95
+          "price": 2.95,
+          "image": "images/full/pepsi.webp",
+          "thumb": "images/thumb/pepsi.webp"
         },
         {
           "name": "Extra saus",
@@ -201,87 +263,129 @@
       "items": [
         {
           "name": "Mac Classic Menu",
-          "price": 10.95
+          "price": 10.95,
+          "image": "images/full/mac-classic.webp",
+          "thumb": "images/thumb/mac-classic.webp"
         },
         {
           "name": "Pesto Riot Menu",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/pesto-riot.webp",
+          "thumb": "images/thumb/pesto-riot.webp"
         },
         {
           "name": "Cheesezilla Menu",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/cheesezilla.webp",
+          "thumb": "images/thumb/cheesezilla.webp"
         },
         {
           "name": "Crispy Chicken Bomb Menu",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/crispy-chicken-bomb.webp",
+          "thumb": "images/thumb/crispy-chicken-bomb.webp"
         },
         {
           "name": "Tender Melt Menu",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/tender-melt.webp",
+          "thumb": "images/thumb/tender-melt.webp"
         },
         {
           "name": "Smoky Grill Chicken Menu",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/smoky-grill-chicken.webp",
+          "thumb": "images/thumb/smoky-grill-chicken.webp"
         },
         {
           "name": "Nacho Volcano Menu",
-          "price": 11.95
+          "price": 11.95,
+          "image": "images/full/nacho-volcano.webp",
+          "thumb": "images/thumb/nacho-volcano.webp"
         },
         {
           "name": "Loaded Cheesezilla Menu",
-          "price": 13.95
+          "price": 13.95,
+          "image": "images/full/loaded-cheesezilla.webp",
+          "thumb": "images/thumb/loaded-cheesezilla.webp"
         },
         {
           "name": "Loaded Crispy Chicken Bomb Menu",
-          "price": 13.95
+          "price": 13.95,
+          "image": "images/full/loaded-crispy-chicken-bomb.webp",
+          "thumb": "images/thumb/loaded-crispy-chicken-bomb.webp"
         },
         {
           "name": "Loaded Tender Melt Menu",
-          "price": 13.95
+          "price": 13.95,
+          "image": "images/full/loaded-tender-melt.webp",
+          "thumb": "images/thumb/loaded-tender-melt.webp"
         },
         {
           "name": "Loaded Smoky Grill Menu",
-          "price": 13.95
+          "price": 13.95,
+          "image": "images/full/loaded-smoky-grill.webp",
+          "thumb": "images/thumb/loaded-smoky-grill.webp"
         },
         {
           "name": "Loaded Nacho Volcano Menu",
-          "price": 13.95
+          "price": 13.95,
+          "image": "images/full/loaded-nacho-volcano.webp",
+          "thumb": "images/thumb/loaded-nacho-volcano.webp"
         },
         {
           "name": "Nashville Menu",
-          "price": 14.95
+          "price": 14.95,
+          "image": "images/full/nashville.webp",
+          "thumb": "images/thumb/nashville.webp"
         },
         {
           "name": "Taco Cheesezilla Menu",
-          "price": 14.95
+          "price": 14.95,
+          "image": "images/full/taco-cheesezilla.webp",
+          "thumb": "images/thumb/taco-cheesezilla.webp"
         },
         {
           "name": "Taco Crispy Chicken Bomb Menu",
-          "price": 14.95
+          "price": 14.95,
+          "image": "images/full/taco-crispy-chicken-bomb.webp",
+          "thumb": "images/thumb/taco-crispy-chicken-bomb.webp"
         },
         {
           "name": "Taco Tender Melt Menu",
-          "price": 14.95
+          "price": 14.95,
+          "image": "images/full/taco-tender-melt.webp",
+          "thumb": "images/thumb/taco-tender-melt.webp"
         },
         {
           "name": "Taco Smoky Grill Menu",
-          "price": 14.95
+          "price": 14.95,
+          "image": "images/full/taco-smoky-grill.webp",
+          "thumb": "images/thumb/taco-smoky-grill.webp"
         },
         {
           "name": "Taco Nacho Volcano Menu",
-          "price": 14.95
+          "price": 14.95,
+          "image": "images/full/taco-nacho-volcano.webp",
+          "thumb": "images/thumb/taco-nacho-volcano.webp"
         },
         {
           "name": "Double Smash Menu",
-          "price": 15.95
+          "price": 15.95,
+          "image": "images/full/double-smash.webp",
+          "thumb": "images/thumb/double-smash.webp"
         },
         {
           "name": "Triple Smash Menu",
-          "price": 17.95
+          "price": 17.95,
+          "image": "images/full/triple-smash.webp",
+          "thumb": "images/thumb/triple-smash.webp"
         },
         {
           "name": "Monster Smash Menu",
-          "price": 19.95
+          "price": 19.95,
+          "image": "images/full/monster-smash.webp",
+          "thumb": "images/thumb/monster-smash.webp"
         }
       ]
     },
@@ -292,117 +396,140 @@
         {
           "name": "Pepsi",
           "price": 2.95,
-          "image": "images/drinks/pepsi.webp"
+          "image": "images/full/pepsi.webp",
+          "thumb": "images/thumb/pepsi.webp"
         },
         {
           "name": "Pepsi Zero",
           "price": 2.95,
-          "image": "images/drinks/pepsi-zero.webp"
+          "image": "images/full/pepsi-zero.webp",
+          "thumb": "images/thumb/pepsi-zero.webp"
         },
         {
           "name": "Sisi",
           "price": 2.95,
-          "image": "images/drinks/sisi.webp"
+          "image": "images/full/sisi.webp",
+          "thumb": "images/thumb/sisi.webp"
         },
         {
           "name": "7Up Zero",
           "price": 2.95,
-          "image": "images/drinks/7up-zero.webp"
+          "image": "images/full/7up-zero.webp",
+          "thumb": "images/thumb/7up-zero.webp"
         },
         {
           "name": "Lipton Peach",
           "price": 2.95,
-          "image": "images/drinks/lipton-peach.webp"
+          "image": "images/full/lipton-peach.webp",
+          "thumb": "images/thumb/lipton-peach.webp"
         },
         {
           "name": "Lipton Green",
           "price": 2.95,
-          "image": "images/drinks/lipton-green.webp"
+          "image": "images/full/lipton-green.webp",
+          "thumb": "images/thumb/lipton-green.webp"
         },
         {
           "name": "Lipton Sparkling",
           "price": 2.95,
-          "image": "images/drinks/lipton-sparkling.webp"
+          "image": "images/full/lipton-sparkling.webp",
+          "thumb": "images/thumb/lipton-sparkling.webp"
         },
         {
           "name": "Fernandes Cherry",
           "price": 2.95,
-          "image": "images/drinks/fernandes-cherry.webp"
+          "image": "images/full/fernandes-cherry.webp",
+          "thumb": "images/thumb/fernandes-cherry.webp"
         },
         {
           "name": "Fernandes Green Punch",
           "price": 2.95,
-          "image": "images/drinks/fernandes-green-punch.webp"
+          "image": "images/full/fernandes-green-punch.webp",
+          "thumb": "images/thumb/fernandes-green-punch.webp"
         },
         {
           "name": "Fernandes Blue",
           "price": 2.95,
-          "image": "images/drinks/fernandes-blue.webp"
+          "image": "images/full/fernandes-blue.webp",
+          "thumb": "images/thumb/fernandes-blue.webp"
         },
         {
           "name": "Fernandes Yellow",
           "price": 2.95,
-          "image": "images/drinks/fernandes-yellow.webp"
+          "image": "images/full/fernandes-yellow.webp",
+          "thumb": "images/thumb/fernandes-yellow.webp"
         },
         {
           "name": "Fristi",
           "price": 2.95,
-          "image": "images/drinks/fristi.webp"
+          "image": "images/full/fristi.webp",
+          "thumb": "images/thumb/fristi.webp"
         },
         {
           "name": "Chocomel",
           "price": 2.95,
-          "image": "images/drinks/chocomel.webp"
+          "image": "images/full/chocomel.webp",
+          "thumb": "images/thumb/chocomel.webp"
         },
         {
           "name": "Hero Sinaasappel",
           "price": 2.95,
-          "image": "images/drinks/hero-sinaasappel.webp"
+          "image": "images/full/hero-sinaasappel.webp",
+          "thumb": "images/thumb/hero-sinaasappel.webp"
         },
         {
           "name": "Hero Appel",
           "price": 2.95,
-          "image": "images/drinks/hero-appel.webp"
+          "image": "images/full/hero-appel.webp",
+          "thumb": "images/thumb/hero-appel.webp"
         },
         {
           "name": "AA Drink",
           "price": 2.95,
-          "image": "images/drinks/aa-drink.webp"
+          "image": "images/full/aa-drink.webp",
+          "thumb": "images/thumb/aa-drink.webp"
         },
         {
           "name": "Spa Blauw",
           "price": 2.95,
-          "image": "images/drinks/spa-blauw.webp"
+          "image": "images/full/spa-blauw.webp",
+          "thumb": "images/thumb/spa-blauw.webp"
         },
         {
           "name": "Spa Intense",
           "price": 2.95,
-          "image": "images/drinks/spa-intense.webp"
+          "image": "images/full/spa-intense.webp",
+          "thumb": "images/thumb/spa-intense.webp"
         },
         {
           "name": "Red Bull",
           "price": 3.95,
-          "image": "images/drinks/red-bull.webp"
+          "image": "images/full/red-bull.webp",
+          "thumb": "images/thumb/red-bull.webp"
         },
         {
           "name": "San Pellegrino Aranciata Rossa",
           "price": 3.95,
-          "image": "images/drinks/san-pellegrino-aranciata-rossa.webp"
+          "image": "images/full/san-pellegrino-aranciata-rossa.webp",
+          "thumb": "images/thumb/san-pellegrino-aranciata-rossa.webp"
         },
         {
           "name": "San Pellegrino Limonata",
           "price": 3.95,
-          "image": "images/drinks/san-pellegrino-limonata.webp"
+          "image": "images/full/san-pellegrino-limonata.webp",
+          "thumb": "images/thumb/san-pellegrino-limonata.webp"
         },
         {
           "name": "ChariTea Green",
           "price": 3.95,
-          "image": "images/drinks/charitea-green.webp"
+          "image": "images/full/charitea-green.webp",
+          "thumb": "images/thumb/charitea-green.webp"
         },
         {
           "name": "ChariTea Red",
           "price": 3.95,
-          "image": "images/drinks/charitea-red.webp"
+          "image": "images/full/charitea-red.webp",
+          "thumb": "images/thumb/charitea-red.webp"
         }
       ]
     }
