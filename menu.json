@@ -1,0 +1,383 @@
+{
+  "name": "Mac & Cheese House",
+  "currency": "EUR",
+  "updated": "2026-10-13",
+  "footer": "Raadpleeg het personeel voor informatie over allergenen.",
+  "categories": [
+    {
+      "id": "lunchdeal",
+      "name": "Lunchdeal",
+      "items": [
+        {
+          "name": "Lunchdeal",
+          "price": 7.95
+        }
+      ]
+    },
+    {
+      "id": "mac-and-cheese",
+      "name": "Mac & Cheese",
+      "items": [
+        {
+          "name": "Mac Classic",
+          "price": 8.95
+        },
+        {
+          "name": "Pesto Riot",
+          "price": 9.95
+        },
+        {
+          "name": "Cheesezilla",
+          "price": 9.95
+        },
+        {
+          "name": "Crispy Chicken Bomb",
+          "price": 9.95
+        },
+        {
+          "name": "Tender Melt",
+          "price": 9.95
+        },
+        {
+          "name": "Smoky Grill Chicken",
+          "price": 9.95
+        },
+        {
+          "name": "Nacho Volcano",
+          "price": 9.95
+        }
+      ]
+    },
+    {
+      "id": "loaded-bowls",
+      "name": "Loaded Bowls",
+      "items": [
+        {
+          "name": "Loaded Cheesezilla",
+          "price": 11.95
+        },
+        {
+          "name": "Loaded Crispy Chicken Bomb",
+          "price": 11.95
+        },
+        {
+          "name": "Loaded Tender Melt",
+          "price": 11.95
+        },
+        {
+          "name": "Loaded Smoky Grill",
+          "price": 11.95
+        },
+        {
+          "name": "Loaded Nacho Volcano",
+          "price": 11.95
+        },
+        {
+          "name": "Nashville",
+          "price": 12.95
+        }
+      ]
+    },
+    {
+      "id": "french-tacos",
+      "name": "French Tacos",
+      "items": [
+        {
+          "name": "Taco Cheesezilla",
+          "price": 9.95
+        },
+        {
+          "name": "Taco Crispy Chicken Bomb",
+          "price": 9.95
+        },
+        {
+          "name": "Taco Tender Melt",
+          "price": 9.95
+        },
+        {
+          "name": "Taco Smoky Grill",
+          "price": 9.95
+        },
+        {
+          "name": "Taco Nacho Volcano",
+          "price": 9.95
+        }
+      ]
+    },
+    {
+      "id": "smash-burgers",
+      "name": "Smash Burgers",
+      "items": [
+        {
+          "name": "Double Smash",
+          "price": 10.95
+        },
+        {
+          "name": "Triple Smash",
+          "price": 12.95
+        },
+        {
+          "name": "Monster Smash",
+          "price": 14.95
+        }
+      ]
+    },
+    {
+      "id": "snacks",
+      "name": "Snacks",
+      "items": [
+        {
+          "name": "Patat",
+          "price": 3.95
+        },
+        {
+          "name": "Mac & Cheese Balls (6 st)",
+          "price": 5.95
+        },
+        {
+          "name": "Chili Cheese Nuggets (6 st)",
+          "price": 5.95
+        }
+      ]
+    },
+    {
+      "id": "knafeh",
+      "name": "Cheesy Knafeh Sticks (Dessert)",
+      "items": [
+        {
+          "name": "Classic",
+          "price": 7.95
+        },
+        {
+          "name": "Chocolate",
+          "price": 8.95
+        },
+        {
+          "name": "White Chocolate",
+          "price": null
+        },
+        {
+          "name": "Dubai",
+          "price": 9.95
+        }
+      ]
+    },
+    {
+      "id": "kids",
+      "name": "Kids",
+      "items": [
+        {
+          "name": "Kids Mac",
+          "price": 4.95
+        },
+        {
+          "name": "Kids Nuggets",
+          "price": 4.95
+        }
+      ]
+    },
+    {
+      "id": "extras",
+      "name": "Extra's",
+      "items": [
+        {
+          "name": "Drankje",
+          "price": 2.95
+        },
+        {
+          "name": "Extra saus",
+          "price": 1.0
+        }
+      ]
+    },
+    {
+      "id": "menus",
+      "name": "Menu's",
+      "note": "Met friet en een drankje naar keuze.",
+      "items": [
+        {
+          "name": "Mac Classic Menu",
+          "price": 10.95
+        },
+        {
+          "name": "Pesto Riot Menu",
+          "price": 11.95
+        },
+        {
+          "name": "Cheesezilla Menu",
+          "price": 11.95
+        },
+        {
+          "name": "Crispy Chicken Bomb Menu",
+          "price": 11.95
+        },
+        {
+          "name": "Tender Melt Menu",
+          "price": 11.95
+        },
+        {
+          "name": "Smoky Grill Chicken Menu",
+          "price": 11.95
+        },
+        {
+          "name": "Nacho Volcano Menu",
+          "price": 11.95
+        },
+        {
+          "name": "Loaded Cheesezilla Menu",
+          "price": 13.95
+        },
+        {
+          "name": "Loaded Crispy Chicken Bomb Menu",
+          "price": 13.95
+        },
+        {
+          "name": "Loaded Tender Melt Menu",
+          "price": 13.95
+        },
+        {
+          "name": "Loaded Smoky Grill Menu",
+          "price": 13.95
+        },
+        {
+          "name": "Loaded Nacho Volcano Menu",
+          "price": 13.95
+        },
+        {
+          "name": "Nashville Menu",
+          "price": 14.95
+        },
+        {
+          "name": "Taco Cheesezilla Menu",
+          "price": 14.95
+        },
+        {
+          "name": "Taco Crispy Chicken Bomb Menu",
+          "price": 14.95
+        },
+        {
+          "name": "Taco Tender Melt Menu",
+          "price": 14.95
+        },
+        {
+          "name": "Taco Smoky Grill Menu",
+          "price": 14.95
+        },
+        {
+          "name": "Taco Nacho Volcano Menu",
+          "price": 14.95
+        },
+        {
+          "name": "Double Smash Menu",
+          "price": 15.95
+        },
+        {
+          "name": "Triple Smash Menu",
+          "price": 17.95
+        },
+        {
+          "name": "Monster Smash Menu",
+          "price": 19.95
+        }
+      ]
+    },
+    {
+      "id": "dranken",
+      "name": "Dranken",
+      "items": [
+        {
+          "name": "Pepsi",
+          "price": 2.95
+        },
+        {
+          "name": "Pepsi Zero",
+          "price": 2.95
+        },
+        {
+          "name": "Sisi",
+          "price": 2.95
+        },
+        {
+          "name": "7Up Zero",
+          "price": 2.95
+        },
+        {
+          "name": "Lipton Peach",
+          "price": 2.95
+        },
+        {
+          "name": "Lipton Green",
+          "price": 2.95
+        },
+        {
+          "name": "Lipton Sparkling",
+          "price": 2.95
+        },
+        {
+          "name": "Fernandes Cherry",
+          "price": 2.95
+        },
+        {
+          "name": "Fernandes Green Punch",
+          "price": 2.95
+        },
+        {
+          "name": "Fernandes Blue",
+          "price": 2.95
+        },
+        {
+          "name": "Fernandes Yellow",
+          "price": 2.95
+        },
+        {
+          "name": "Fristi",
+          "price": 2.95
+        },
+        {
+          "name": "Chocomel",
+          "price": 2.95
+        },
+        {
+          "name": "Hero Sinaasappel",
+          "price": 2.95
+        },
+        {
+          "name": "Hero Appel",
+          "price": 2.95
+        },
+        {
+          "name": "AA Drink",
+          "price": 2.95
+        },
+        {
+          "name": "Spa Blauw",
+          "price": 2.95
+        },
+        {
+          "name": "Spa Intense",
+          "price": 2.95
+        },
+        {
+          "name": "Red Bull",
+          "price": 3.95
+        },
+        {
+          "name": "San Pellegrino Aranciata Rossa",
+          "price": 3.95
+        },
+        {
+          "name": "San Pellegrino Limonata",
+          "price": 3.95
+        },
+        {
+          "name": "ChariTea Green",
+          "price": 3.95
+        },
+        {
+          "name": "ChariTea Red",
+          "price": 3.95
+        }
+      ]
+    }
+  ]
+}
