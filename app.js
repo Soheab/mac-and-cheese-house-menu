@@ -7,6 +7,23 @@ const formatPrice = new Intl.NumberFormat("nl-NL", {
   maximumFractionDigits: 2,
 }).format;
 
+// Set from menu.json's "currency" once it has loaded.
+let currencySymbol = "€";
+
+function currencySymbolFor(currency) {
+  return new Intl.NumberFormat("nl-NL", { style: "currency", currency })
+    .formatToParts(0)
+    .find((part) => part.type === "currency").value;
+}
+
+// A price with the currency symbol in front, e.g. "€ 8,95".
+function priceNodes(amount) {
+  return [
+    el("span", { className: "currency", textContent: currencySymbol }),
+    formatPrice(amount),
+  ];
+}
+
 const CART_KEY = "mac-and-cheese-house-menu:cart";
 
 function el(tag, { dataset, ...props } = {}, children = []) {
@@ -102,14 +119,13 @@ function renderCart() {
     lines.push(el("li", {}, [
       el("span", { className: "name", textContent: name }),
       el("div", { className: "qty" }, qtyControl(key, name)),
-      el("span", { className: "price", textContent: formatPrice(lineCents / 100) }),
+      el("span", { className: "price" }, priceNodes(lineCents / 100)),
     ]));
   }
 
-  const total = `€ ${formatPrice(totalCents / 100)}`;
   $("#cart-count").textContent = count === 1 ? "1 item" : `${count} items`;
-  $("#cart-bar-total").textContent = total;
-  $("#cart-total").textContent = total;
+  $("#cart-bar-total").replaceChildren(...priceNodes(totalCents / 100));
+  $("#cart-total").replaceChildren(...priceNodes(totalCents / 100));
   $("#cart-lines").replaceChildren(...lines);
   $("#cart-bar").hidden = count === 0;
   document.body.classList.toggle("has-cart", count > 0);
@@ -143,6 +159,7 @@ function setupCart() {
 
 function renderMenu(data) {
   renderTitle(data.name);
+  if (data.currency) currencySymbol = currencySymbolFor(data.currency);
   $("#footer-note").textContent = data.footer ?? "";
   if (data.location?.address) {
     const link = $("#location-link");
@@ -169,10 +186,9 @@ function renderMenu(data) {
           const known = typeof item.price === "number";
           const children = [
             el("span", { className: "name", textContent: item.name }),
-            el("span", {
-              className: known ? "price" : "price unknown",
-              textContent: known ? formatPrice(item.price) : "Prijs onbekend",
-            }),
+            known
+              ? el("span", { className: "price" }, priceNodes(item.price))
+              : el("span", { className: "price unknown", textContent: "Prijs onbekend" }),
           ];
           if (known) {
             const key = itemKey(cat, item);

@@ -58,6 +58,8 @@ li {
 }
 li .name { flex: 1; }
 .price { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+.currency { color: var(--accent); font-weight: 400; margin-right: .25em; }
+#cart-bar .currency { color: inherit; }
 .price.unknown { color: var(--muted); font-weight: 400; font-size: .85rem; padding-right: 6px; }
 
 .qty { display: flex; align-items: center; gap: 4px; }
