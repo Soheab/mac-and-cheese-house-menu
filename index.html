@@ -13,10 +13,12 @@
   <h1 id="title"></h1>
   <p id="subtitle">Menukaart · prijzen in euro's</p>
   <p id="location" hidden><a id="location-link" target="_blank" rel="noopener"></a></p>
-  <input id="search" type="search" placeholder="Zoeken…" autocomplete="off" aria-label="Zoek op het menu">
 </header>
 
-<nav id="nav"></nav>
+<div id="toolbar">
+  <input id="search" type="search" placeholder="Zoeken…" autocomplete="off" aria-label="Zoek op het menu">
+  <nav id="nav"></nav>
+</div>
 
 <main id="menu">
   <p class="status">Menu laden…</p>
@@ -26,5 +28,21 @@
   <p id="footer-note"></p>
   <p>Onofficieel menu, overgenomen van de bestelzuil<span id="updated"></span>. Prijzen kunnen afwijken.</p>
 </footer>
+
+<button id="cart-bar" type="button" hidden>
+  <span>Winkelwagen · <span id="cart-count"></span></span>
+  <strong id="cart-bar-total"></strong>
+</button>
+
+<dialog id="cart" aria-labelledby="cart-title">
+  <div class="cart-head">
+    <h2 id="cart-title">Winkelwagen</h2>
+    <button id="cart-close" type="button" class="icon" aria-label="Sluiten">✕</button>
+  </div>
+  <p class="note">Alleen om te rekenen. Je kunt hier niet bestellen.</p>
+  <ul id="cart-lines"></ul>
+  <p class="cart-total"><span>Totaal</span><strong id="cart-total"></strong></p>
+  <button id="cart-clear" type="button" class="secondary">Leegmaken</button>
+</dialog>
 </body>
 </html>

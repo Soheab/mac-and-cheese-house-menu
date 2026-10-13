@@ -2,6 +2,13 @@
 
 const $ = (sel) => document.querySelector(sel);
 
+const formatPrice = new Intl.NumberFormat("nl-NL", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+}).format;
+
+const CART_KEY = "mac-and-cheese-house-menu:cart";
+
 function el(tag, { dataset, ...props } = {}, children = []) {
   const node = Object.assign(document.createElement(tag), props);
   if (dataset) Object.assign(node.dataset, dataset);
@@ -18,12 +25,123 @@ function renderTitle(name) {
   document.title = `${name} — Menu`;
 }
 
-function renderMenu(data) {
-  const formatPrice = new Intl.NumberFormat("nl-NL", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format;
+// ---------------------------------------------------------------------------
+// Cart: purely a calculator, nothing is ever sent anywhere. Quantities are
+// kept in localStorage so a reload doesn't lose them.
+// ---------------------------------------------------------------------------
 
+const products = new Map(); // key -> { name, price }
+const cart = new Map(); // key -> quantity
+const controls = new Map(); // key -> .qty element in the menu list
+
+const itemKey = (cat, item) => `${cat.id}/${item.name}`;
+
+function loadCart() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(CART_KEY) ?? "{}");
+    for (const [key, qty] of Object.entries(saved)) {
+      // Drop items that were removed from the menu or lost their price.
+      if (products.has(key) && Number.isInteger(qty) && qty > 0) cart.set(key, qty);
+    }
+  } catch {
+    // Corrupt or unavailable storage: start with an empty cart.
+  }
+}
+
+function saveCart() {
+  try {
+    localStorage.setItem(CART_KEY, JSON.stringify(Object.fromEntries(cart)));
+  } catch {
+    // Private mode etc.: the cart still works for this page view.
+  }
+}
+
+function setQty(key, qty) {
+  if (qty > 0) cart.set(key, qty);
+  else cart.delete(key);
+  saveCart();
+  renderCart();
+}
+
+function qtyControl(key, name) {
+  const qty = cart.get(key) ?? 0;
+  if (qty === 0) {
+    return [el("button", {
+      type: "button", className: "add", textContent: "+",
+      ariaLabel: `${name} toevoegen`,
+      onclick: () => setQty(key, 1),
+    })];
+  }
+  return [
+    el("button", {
+      type: "button", textContent: "−", ariaLabel: `Eén ${name} minder`,
+      onclick: () => setQty(key, qty - 1),
+    }),
+    el("span", { textContent: qty }),
+    el("button", {
+      type: "button", textContent: "+", ariaLabel: `Eén ${name} meer`,
+      onclick: () => setQty(key, qty + 1),
+    }),
+  ];
+}
+
+function renderCart() {
+  for (const [key, node] of controls) {
+    node.replaceChildren(...qtyControl(key, products.get(key).name));
+  }
+
+  let count = 0;
+  let totalCents = 0;
+  const lines = [];
+  for (const [key, qty] of cart) {
+    const { name, price } = products.get(key);
+    // Sum in cents to avoid floating point drift (0.1 + 0.2 and friends).
+    const lineCents = Math.round(price * 100) * qty;
+    count += qty;
+    totalCents += lineCents;
+    lines.push(el("li", {}, [
+      el("span", { className: "name", textContent: name }),
+      el("div", { className: "qty" }, qtyControl(key, name)),
+      el("span", { className: "price", textContent: formatPrice(lineCents / 100) }),
+    ]));
+  }
+
+  const total = `€ ${formatPrice(totalCents / 100)}`;
+  $("#cart-count").textContent = count === 1 ? "1 item" : `${count} items`;
+  $("#cart-bar-total").textContent = total;
+  $("#cart-total").textContent = total;
+  $("#cart-lines").replaceChildren(...lines);
+  $("#cart-bar").hidden = count === 0;
+  document.body.classList.toggle("has-cart", count > 0);
+  if (count === 0 && $("#cart").open) $("#cart").close();
+}
+
+function setupCart() {
+  const dialog = $("#cart");
+  $("#cart-bar").addEventListener("click", () => dialog.showModal());
+  $("#cart-close").addEventListener("click", () => dialog.close());
+  $("#cart-clear").addEventListener("click", () => {
+    cart.clear();
+    saveCart();
+    renderCart();
+  });
+  // Close when tapping the backdrop (the dialog element itself, outside its content).
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      const r = dialog.getBoundingClientRect();
+      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) dialog.close();
+    }
+  });
+  loadCart();
+  renderCart();
+}
+
+// ---------------------------------------------------------------------------
+// Menu
+// ---------------------------------------------------------------------------
+
+function renderMenu(data) {
   renderTitle(data.name);
   $("#footer-note").textContent = data.footer ?? "";
   if (data.location?.address) {
@@ -49,13 +167,21 @@ function renderMenu(data) {
         ...(cat.note ? [el("p", { className: "note", textContent: cat.note })] : []),
         el("ul", {}, cat.items.map((item) => {
           const known = typeof item.price === "number";
-          return el("li", { dataset: { search: item.name.toLowerCase() } }, [
-            el("span", { textContent: item.name }),
+          const children = [
+            el("span", { className: "name", textContent: item.name }),
             el("span", {
               className: known ? "price" : "price unknown",
               textContent: known ? formatPrice(item.price) : "Prijs onbekend",
             }),
-          ]);
+          ];
+          if (known) {
+            const key = itemKey(cat, item);
+            const control = el("div", { className: "qty" });
+            products.set(key, { name: item.name, price: item.price });
+            controls.set(key, control);
+            children.push(control);
+          }
+          return el("li", { dataset: { search: item.name.toLowerCase() } }, children);
         })),
       ]),
     ),
@@ -84,18 +210,47 @@ function setupSearch() {
 }
 
 function setupActiveNav() {
-  const links = [...document.querySelectorAll("#nav a")];
-  const observer = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      for (const a of links) {
-        const active = a.hash === `#${entry.target.id}`;
-        a.classList.toggle("active", active);
-        if (active) a.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
-      }
+  const toolbar = $("#toolbar");
+  const links = [...$("#nav").querySelectorAll("a")];
+  const sections = [...document.querySelectorAll("#menu section")];
+  let current = null;
+  let queued = false;
+
+  // The active section is the last one whose top has passed the sticky toolbar.
+  // Before any has (top of the page), it's the first one; at the very bottom,
+  // the last one, since short trailing sections can never reach the toolbar.
+  function update() {
+    queued = false;
+    // Keep section scroll offsets in sync with the toolbar's real height.
+    document.documentElement.style.setProperty("--toolbar-h", `${toolbar.offsetHeight}px`);
+    const visible = sections.filter((s) => !s.hidden);
+    if (!visible.length) return;
+    const atBottom = window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    const line = toolbar.getBoundingClientRect().bottom + 8;
+    let active = visible[0];
+    for (const s of visible) {
+      if (s.getBoundingClientRect().top <= line) active = s;
     }
-  }, { rootMargin: "-60px 0px -70% 0px" });
-  document.querySelectorAll("#menu section").forEach((s) => observer.observe(s));
+    if (atBottom) active = visible.at(-1);
+    if (active === current) return;
+    current = active;
+    for (const a of links) {
+      const on = a.hash === `#${active.id}`;
+      a.classList.toggle("active", on);
+      if (on) a.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+    }
+  }
+
+  const schedule = () => {
+    if (!queued) {
+      queued = true;
+      requestAnimationFrame(update);
+    }
+  };
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+  $("#search").addEventListener("input", schedule);
+  update();
 }
 
 async function main() {
@@ -105,6 +260,7 @@ async function main() {
     renderMenu(await res.json());
     setupSearch();
     setupActiveNav();
+    setupCart();
   } catch (err) {
     console.error(err);
     $("#menu").replaceChildren(el("p", { className: "status", textContent: "Menu kon niet geladen worden." }));

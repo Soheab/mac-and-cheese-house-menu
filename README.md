@@ -6,7 +6,7 @@ Live: https://mchouse.soheab.com
 
 ## How it works
 
-It is a static site with no build step. All menu data lives in [`menu.json`](menu.json), and [`app.js`](app.js) renders the page from it at load time, including the category navigation and the search box.
+It is a static site with no build step. All menu data lives in [`menu.json`](menu.json), and [`app.js`](app.js) renders the page from it at load time, including the category navigation, the search box and a cart. The cart only adds up prices to show a total; it does not place orders and is kept in `localStorage`.
 
 To change the menu, edit `menu.json`:
 
