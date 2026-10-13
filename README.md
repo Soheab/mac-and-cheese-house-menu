@@ -31,7 +31,7 @@ To change the menu, edit `menu.json`:
 }
 ```
 
-A `price` of `null` is shown as "Prijs onbekend". `location` is optional; without `maps`, the link falls back to a Google Maps search for the address.
+A `price` of `null` is shown as "Prijs onbekend". Items can also have an `image` (a path relative to the site root), shown as a small thumbnail before the name.
 
 ## Running locally
 
@@ -45,4 +45,6 @@ Then open http://localhost:8000.
 
 ## License
 
-[MIT](LICENSE). Not affiliated with Mac & Cheese House.
+The code and menu data are [MIT](LICENSE). The drink images in `images/` are cropped from photos of the restaurant's ordering kiosk. The brand names and logos on them are trademarks of their respective owners, are shown only to identify the products on the menu, and are not covered by the MIT license.
+
+Not affiliated with Mac & Cheese House or any of the brands listed.

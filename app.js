@@ -33,6 +33,14 @@ function el(tag, { dataset, ...props } = {}, children = []) {
   return node;
 }
 
+function thumbNode(item) {
+  if (!item.image) return [];
+  return [el("img", {
+    className: "thumb", src: item.image, alt: "", loading: "lazy", decoding: "async",
+    width: 40, height: 40,
+  })];
+}
+
 function renderTitle(name) {
   // Highlight the "&" in names like "Mac & Cheese House".
   const [before, ...rest] = name.split("&");
@@ -185,6 +193,7 @@ function renderMenu(data) {
         el("ul", {}, cat.items.map((item) => {
           const known = typeof item.price === "number";
           const children = [
+            ...thumbNode(item),
             el("span", { className: "name", textContent: item.name }),
             known
               ? el("span", { className: "price" }, priceNodes(item.price))
